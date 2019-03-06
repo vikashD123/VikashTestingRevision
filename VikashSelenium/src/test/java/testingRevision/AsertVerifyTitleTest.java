@@ -2,6 +2,7 @@ package testingRevision;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class AsertVerifyTitleTest {
@@ -18,6 +19,12 @@ public class AsertVerifyTitleTest {
 		String actual_title=driver.getTitle();
 		
 		System.out.println(actual_title);
+		
+		String expected_title="Facebook";
+		
+		Assert.assertEquals(actual_title, expected_title,"Title didn't matched");
+		
+		System.out.println("Title verified");
 		
 		
 	}
